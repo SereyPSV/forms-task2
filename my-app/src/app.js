@@ -10,13 +10,7 @@ const sendFormData = (formData) => {
 };
 
 const fieldsSchema = yup.object().shape({
-	email: yup
-		.string()
-		.matches(
-			/^[\w_@.]*$/,
-			'Неверный E-mail. Допустимые символы: буквы, цифры, нижнее подчёркивание, символы "@" и "."',
-		)
-		.min(5, 'Неверный E-mail.'),
+	email: yup.string().email('Неверный E-mail.').min(5, 'Неверный E-mail.'),
 	password1: yup
 		.string()
 		.matches(
