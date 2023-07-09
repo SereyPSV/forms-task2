@@ -27,11 +27,7 @@ const fieldsSchema = yup.object().shape({
 		)
 		.min(3, 'Неверный логин. Должно быть не меньше 3 символов')
 		.max(20, 'Неверный логин. Должно быть не больше 20 символов'),
-	buttonSubmit: yup.string(),
-	// .required(
-	// 	false,
-	// 	'Неверный логин. Допустимые символы: буквы, цифры и нижнее подчёркивание',
-	// ),
+	buttonSubmit: yup.string().required('Не совпадение паролей'),
 });
 
 export const App = () => {
